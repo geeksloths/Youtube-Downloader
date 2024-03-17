@@ -1,0 +1,360 @@
+[
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "YouTube",
+        "importPath": "pytube",
+        "description": "pytube",
+        "isExtraImport": true,
+        "detail": "pytube",
+        "documentation": {}
+    },
+    {
+        "label": "YouTube",
+        "importPath": "pytube",
+        "description": "pytube",
+        "isExtraImport": true,
+        "detail": "pytube",
+        "documentation": {}
+    },
+    {
+        "label": "YouTube",
+        "importPath": "pytube",
+        "description": "pytube",
+        "isExtraImport": true,
+        "detail": "pytube",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "Convertor",
+        "importPath": "YoutubeDownlaoder.byte_convertor",
+        "description": "YoutubeDownlaoder.byte_convertor",
+        "isExtraImport": true,
+        "detail": "YoutubeDownlaoder.byte_convertor",
+        "documentation": {}
+    },
+    {
+        "label": "Time",
+        "importPath": "YoutubeDownlaoder.time_convertor",
+        "description": "YoutubeDownlaoder.time_convertor",
+        "isExtraImport": true,
+        "detail": "YoutubeDownlaoder.time_convertor",
+        "documentation": {}
+    },
+    {
+        "label": "threading",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "threading",
+        "description": "threading",
+        "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "Convertor",
+        "importPath": "byte_convertor",
+        "description": "byte_convertor",
+        "isExtraImport": true,
+        "detail": "byte_convertor",
+        "documentation": {}
+    },
+    {
+        "label": "Time",
+        "importPath": "time_convertor",
+        "description": "time_convertor",
+        "isExtraImport": true,
+        "detail": "time_convertor",
+        "documentation": {}
+    },
+    {
+        "label": "get",
+        "importPath": "list_files",
+        "description": "list_files",
+        "isExtraImport": true,
+        "detail": "list_files",
+        "documentation": {}
+    },
+    {
+        "label": "Downloader",
+        "importPath": "YoutubeDownlaoder.downloader",
+        "description": "YoutubeDownlaoder.downloader",
+        "isExtraImport": true,
+        "detail": "YoutubeDownlaoder.downloader",
+        "documentation": {}
+    },
+    {
+        "label": "Convertor",
+        "kind": 6,
+        "importPath": "YoutubeDownlaoder.byte_convertor",
+        "description": "YoutubeDownlaoder.byte_convertor",
+        "peekOfCode": "class Convertor:\n    def __init__(self, size):\n        self.size = int(size)\n    def convert(self):\n        # 1kb = 1024 byte\n        # 1MB = 1048576 byte\n        # 1GB = 1073741824 byte\n        if self.size < 1048576:\n            unit_scale = 1024\n            unit = \"KB\"",
+        "detail": "YoutubeDownlaoder.byte_convertor",
+        "documentation": {}
+    },
+    {
+        "label": "Downloader",
+        "kind": 6,
+        "importPath": "YoutubeDownlaoder.downloader",
+        "description": "YoutubeDownlaoder.downloader",
+        "peekOfCode": "class Downloader:\n    def __init__(self):\n        self.default_download_path = 'Downloads'\n        self.default_folders = {}\n        self.download = 0\n    def get_directories(self):\n        folders = directories_get(direction=self.default_download_path)\n        if self.default_folders == {}:\n            for folder in folders:\n                self.folder_list(folder)",
+        "detail": "YoutubeDownlaoder.downloader",
+        "documentation": {}
+    },
+    {
+        "label": "get",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.list_files",
+        "description": "YoutubeDownlaoder.list_files",
+        "peekOfCode": "def get(direction):\n    folders = []\n    files = get_folders(direction)\n    # Get Folders Level 1\n    get_folders_level1(direction, files, folders)\n    return folders\ndef get_folders_level1(direction, files, folders):\n    for file in files:\n        is_folder = check_if_folder(file_name=file)\n        if is_folder:",
+        "detail": "YoutubeDownlaoder.list_files",
+        "documentation": {}
+    },
+    {
+        "label": "get_folders_level1",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.list_files",
+        "description": "YoutubeDownlaoder.list_files",
+        "peekOfCode": "def get_folders_level1(direction, files, folders):\n    for file in files:\n        is_folder = check_if_folder(file_name=file)\n        if is_folder:\n            append(file, folders)\n            files = get_folders(direction=direction + \"/\" + file)\n            # Get Folders Level 2\n            get_folders_level2(file, files, folders)\ndef get_folders_level2(file, files, folders):\n    for file2 in files:",
+        "detail": "YoutubeDownlaoder.list_files",
+        "documentation": {}
+    },
+    {
+        "label": "get_folders_level2",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.list_files",
+        "description": "YoutubeDownlaoder.list_files",
+        "peekOfCode": "def get_folders_level2(file, files, folders):\n    for file2 in files:\n        is_folder = check_if_folder(file_name=file2)\n        if is_folder:\n            file2 = file + '/' + file2\n            append(file2, folders)\ndef check_if_folder(file_name):\n    result = True\n    extracted = len(file_name.split(\".\"))\n    if extracted != 1:",
+        "detail": "YoutubeDownlaoder.list_files",
+        "documentation": {}
+    },
+    {
+        "label": "check_if_folder",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.list_files",
+        "description": "YoutubeDownlaoder.list_files",
+        "peekOfCode": "def check_if_folder(file_name):\n    result = True\n    extracted = len(file_name.split(\".\"))\n    if extracted != 1:\n        result = False\n    return result\ndef get_folders(direction):\n    files = sorted(os.listdir(direction), key=lambda fn: os.path.getctime(os.path.join(direction, fn)))\n    return files\ndef append(file, folders):",
+        "detail": "YoutubeDownlaoder.list_files",
+        "documentation": {}
+    },
+    {
+        "label": "get_folders",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.list_files",
+        "description": "YoutubeDownlaoder.list_files",
+        "peekOfCode": "def get_folders(direction):\n    files = sorted(os.listdir(direction), key=lambda fn: os.path.getctime(os.path.join(direction, fn)))\n    return files\ndef append(file, folders):\n    splited_len = len(file.split(\".\"))\n    if splited_len == 1:\n        if file != \"__pycache__\":\n            folders.append(file)",
+        "detail": "YoutubeDownlaoder.list_files",
+        "documentation": {}
+    },
+    {
+        "label": "append",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.list_files",
+        "description": "YoutubeDownlaoder.list_files",
+        "peekOfCode": "def append(file, folders):\n    splited_len = len(file.split(\".\"))\n    if splited_len == 1:\n        if file != \"__pycache__\":\n            folders.append(file)",
+        "detail": "YoutubeDownlaoder.list_files",
+        "documentation": {}
+    },
+    {
+        "label": "get_directories",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.main",
+        "description": "YoutubeDownlaoder.main",
+        "peekOfCode": "def get_directories():\n    folders = directories_get(direction=DEFAULT_DOWNLOAD_PATH)\n    if default_folders == {}:\n        for folder in folders:\n            folder_list(folder)\ndef progress_callback(stream, file_handle, bytes_remaining):\n    downloaded_size = math.ceil(stream.filesize - bytes_remaining)\n    global DOWNLOADED\n    DOWNLOADED = downloaded_size\n    percent = math.ceil((downloaded_size / stream.filesize) * 100)",
+        "detail": "YoutubeDownlaoder.main",
+        "documentation": {}
+    },
+    {
+        "label": "progress_callback",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.main",
+        "description": "YoutubeDownlaoder.main",
+        "peekOfCode": "def progress_callback(stream, file_handle, bytes_remaining):\n    downloaded_size = math.ceil(stream.filesize - bytes_remaining)\n    global DOWNLOADED\n    DOWNLOADED = downloaded_size\n    percent = math.ceil((downloaded_size / stream.filesize) * 100)\n    downloaded_size = Convertor(size=downloaded_size).convert()\n    download_listener(filesize=stream.filesize)\n    remained_size = math.ceil(bytes_remaining)\n    remained_size = Convertor(size=remained_size).convert()\n    # print(f\"Progress: {percent}% | Remained: {remained_size} | Downloaded: {downloaded_size}\")",
+        "detail": "YoutubeDownlaoder.main",
+        "documentation": {}
+    },
+    {
+        "label": "start",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.main",
+        "description": "YoutubeDownlaoder.main",
+        "peekOfCode": "def start():\n    get_directories()\n    link = input(\"Enter Your Link: \")\n    if link == \"exit\":\n        exit()\n    yt = YouTube(url=link, on_progress_callback=progress_callback)\n    get_details(yt)\n    streams = yt.streams.filter(progressive=True)\n    ID = get_stream(streams)\n    chosen = yt.streams.get_by_itag(ID)",
+        "detail": "YoutubeDownlaoder.main",
+        "documentation": {}
+    },
+    {
+        "label": "select_option",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.main",
+        "description": "YoutubeDownlaoder.main",
+        "peekOfCode": "def select_option():\n    options = {0: download_option, 1: get_link_option}\n    option = input(\"\\nSelect preferred option: \\n\"\n                   \"     0 => Download \\n\"\n                   \"     1 => Get Link \\n\"\n                   \"option: \")\n    option = int(option)\n    return option, options\ndef get_link_option(chosen, current):\n    print(chosen.url)",
+        "detail": "YoutubeDownlaoder.main",
+        "documentation": {}
+    },
+    {
+        "label": "get_link_option",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.main",
+        "description": "YoutubeDownlaoder.main",
+        "peekOfCode": "def get_link_option(chosen, current):\n    print(chosen.url)\ndef download_option(chosen, current):\n    folder = set_path(current)\n    if folder == \"\":\n        chosen.download('Downloads/Default')\n        print(\"Downloaded! \\n\")\n        safe_start()\n    elif folder in default_folders:\n        path = default_folders[folder]",
+        "detail": "YoutubeDownlaoder.main",
+        "documentation": {}
+    },
+    {
+        "label": "download_option",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.main",
+        "description": "YoutubeDownlaoder.main",
+        "peekOfCode": "def download_option(chosen, current):\n    folder = set_path(current)\n    if folder == \"\":\n        chosen.download('Downloads/Default')\n        print(\"Downloaded! \\n\")\n        safe_start()\n    elif folder in default_folders:\n        path = default_folders[folder]\n        change_path(current, folder)\n        chosen.download(f'Downloads/{path}')",
+        "detail": "YoutubeDownlaoder.main",
+        "documentation": {}
+    },
+    {
+        "label": "safe_start",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.main",
+        "description": "YoutubeDownlaoder.main",
+        "peekOfCode": "def safe_start():\n    try:\n        start()\n    except Exception as e:\n        print(\"\\n[ERROR] Please:\\n\"\n              \"          - Check VPN Connection\\n\"\n              \"          - Change Your Link\\n\"\n              \"          - Update Libraries\\n\")\n        print(e)\ndef folder_list(folder):",
+        "detail": "YoutubeDownlaoder.main",
+        "documentation": {}
+    },
+    {
+        "label": "folder_list",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.main",
+        "description": "YoutubeDownlaoder.main",
+        "peekOfCode": "def folder_list(folder):\n    if not default_folders == {}:\n        max_num = max(default_folders)\n        max_num = int(max_num) + 1\n    else:\n        max_num = 0\n    new_folder = {f\"{max_num}\": folder}\n    default_folders.update(new_folder)\ndef change_path(current, folder):\n    if folder in default_folders:",
+        "detail": "YoutubeDownlaoder.main",
+        "documentation": {}
+    },
+    {
+        "label": "change_path",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.main",
+        "description": "YoutubeDownlaoder.main",
+        "peekOfCode": "def change_path(current, folder):\n    if folder in default_folders:\n        joined = os.path.join(current, 'Downloads/', default_folders[folder])\n    else:\n        joined = os.path.join(current, 'Downloads/', folder)\n    print(f\"Your Video Will be saved at: {joined} \\n\")\ndef set_path(current):\n    print(f\"\\nDefault Folder is: {os.path.join(current, 'Downloads/Default')} \\n\")\n    print(f\"These are the folders that you already downloaded videos in \\n\")\n    for i in default_folders:",
+        "detail": "YoutubeDownlaoder.main",
+        "documentation": {}
+    },
+    {
+        "label": "set_path",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.main",
+        "description": "YoutubeDownlaoder.main",
+        "peekOfCode": "def set_path(current):\n    print(f\"\\nDefault Folder is: {os.path.join(current, 'Downloads/Default')} \\n\")\n    print(f\"These are the folders that you already downloaded videos in \\n\")\n    for i in default_folders:\n        print(f\"{i} => {default_folders[i]} \\n\")\n    folder = input(\"Enter Folder name or just leave it for default: \")\n    return folder\ndef get_stream(streams):\n    for stream in streams:\n        print(f\"ID: {stream.itag} | quality: {stream.resolution} | size: {Convertor(size=stream.filesize).convert()}\")",
+        "detail": "YoutubeDownlaoder.main",
+        "documentation": {}
+    },
+    {
+        "label": "get_stream",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.main",
+        "description": "YoutubeDownlaoder.main",
+        "peekOfCode": "def get_stream(streams):\n    for stream in streams:\n        print(f\"ID: {stream.itag} | quality: {stream.resolution} | size: {Convertor(size=stream.filesize).convert()}\")\n    ID = input(\"Enter The ID: \")\n    ID = int(ID)\n    return ID\ndef get_details(yt):\n    print(f'Title: {yt.title}')\n    print(f'Time: {Time(time=yt.length).convert()}' + \"\\n\")\nsafe_start()",
+        "detail": "YoutubeDownlaoder.main",
+        "documentation": {}
+    },
+    {
+        "label": "get_details",
+        "kind": 2,
+        "importPath": "YoutubeDownlaoder.main",
+        "description": "YoutubeDownlaoder.main",
+        "peekOfCode": "def get_details(yt):\n    print(f'Title: {yt.title}')\n    print(f'Time: {Time(time=yt.length).convert()}' + \"\\n\")\nsafe_start()",
+        "detail": "YoutubeDownlaoder.main",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_DOWNLOAD_PATH",
+        "kind": 5,
+        "importPath": "YoutubeDownlaoder.main",
+        "description": "YoutubeDownlaoder.main",
+        "peekOfCode": "DEFAULT_DOWNLOAD_PATH = 'Downloads'\ndefault_folders = {\n}\nDOWNLOADED = 0\ndef get_directories():\n    folders = directories_get(direction=DEFAULT_DOWNLOAD_PATH)\n    if default_folders == {}:\n        for folder in folders:\n            folder_list(folder)\ndef progress_callback(stream, file_handle, bytes_remaining):",
+        "detail": "YoutubeDownlaoder.main",
+        "documentation": {}
+    },
+    {
+        "label": "default_folders",
+        "kind": 5,
+        "importPath": "YoutubeDownlaoder.main",
+        "description": "YoutubeDownlaoder.main",
+        "peekOfCode": "default_folders = {\n}\nDOWNLOADED = 0\ndef get_directories():\n    folders = directories_get(direction=DEFAULT_DOWNLOAD_PATH)\n    if default_folders == {}:\n        for folder in folders:\n            folder_list(folder)\ndef progress_callback(stream, file_handle, bytes_remaining):\n    downloaded_size = math.ceil(stream.filesize - bytes_remaining)",
+        "detail": "YoutubeDownlaoder.main",
+        "documentation": {}
+    },
+    {
+        "label": "DOWNLOADED",
+        "kind": 5,
+        "importPath": "YoutubeDownlaoder.main",
+        "description": "YoutubeDownlaoder.main",
+        "peekOfCode": "DOWNLOADED = 0\ndef get_directories():\n    folders = directories_get(direction=DEFAULT_DOWNLOAD_PATH)\n    if default_folders == {}:\n        for folder in folders:\n            folder_list(folder)\ndef progress_callback(stream, file_handle, bytes_remaining):\n    downloaded_size = math.ceil(stream.filesize - bytes_remaining)\n    global DOWNLOADED\n    DOWNLOADED = downloaded_size",
+        "detail": "YoutubeDownlaoder.main",
+        "documentation": {}
+    },
+    {
+        "label": "yt",
+        "kind": 5,
+        "importPath": "YoutubeDownlaoder.simple",
+        "description": "YoutubeDownlaoder.simple",
+        "peekOfCode": "yt = yt(url=\"https://m.youtube.com/watch?v=f1R_bykXHGE\")\nchosen = yt.streams.get_by_itag(22)\nprint(chosen)",
+        "detail": "YoutubeDownlaoder.simple",
+        "documentation": {}
+    },
+    {
+        "label": "chosen",
+        "kind": 5,
+        "importPath": "YoutubeDownlaoder.simple",
+        "description": "YoutubeDownlaoder.simple",
+        "peekOfCode": "chosen = yt.streams.get_by_itag(22)\nprint(chosen)",
+        "detail": "YoutubeDownlaoder.simple",
+        "documentation": {}
+    },
+    {
+        "label": "Time",
+        "kind": 6,
+        "importPath": "YoutubeDownlaoder.time_convertor",
+        "description": "YoutubeDownlaoder.time_convertor",
+        "peekOfCode": "class Time:\n    def __init__(self, time=0):\n        self.time = time\n        self.hour = \"00\"\n        self.minute = \"00\"\n        self.second = \"00\"\n        self.converted = \"\"\n    def convert(self):\n        self.set_hour()\n        self.set_minute()",
+        "detail": "YoutubeDownlaoder.time_convertor",
+        "documentation": {}
+    }
+]
